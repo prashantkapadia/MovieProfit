@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Streaming</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/searchstyle.css">
+
+</head>
+
+<body>
+  <!-- <div class = "banner">
+    <a href = "/backhome">
+    <img class= "image_banner" src="https://labplot.kde.org/wp-content/uploads/2016/09/slider_background.jpg" alt="..." >
+    </a>
+  </div> -->
+  <div class="navbar">
+    <a href="/backhome">Movie Dashboard</a>
+    <a href="/tab-ml">Tableau & Machine Learning</a>  
+    
+  </div>
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center"> 
+        <h1>Search Dashboard</h1>
+        <p>Use the filters to narrow your search for a movie</p>
+      </div>
+    </div>
+    <!-- <button type="button" id = "search_button" class="btn btn-primary btn-lg">
+      <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+  </button> -->
+    <div class="row">
+      
+        <div class="col-md-4">
+            <div class="box">
+                <div class="well">
+                    <h5>Genre:</h5>
+                    <select id="selGenre" onchange="rebuildMovieTitleList();">
+                      <option value = "0">Action</option>
+                      <option value = "1">Adventure</option>
+                      <option value = "2">Animation</option>
+                      <option value = "3">Biography</option>
+                      <option value = "4">Comedy</option>
+                      <option value = "5">Crime</option>
+                      <option value = "6">Documentary</option>
+                      <option value = "7">Drama</option>
+                      <option value = "8">Fantasy</option>
+                      <option value = "9">Horror</option>
+                    </select>
+                  </div>
+        </div>
+      </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="well">
+                    <h5>Age Appropriate:</h5>
+                    <select id="selAge" onchange="rebuildMovieTitleList();">
+                      <option>7+</option>
+                      <option>13+</option>
+                      <option>16+</option>
+                      <option>18+</option>
+                      <option>all</option>
+
+                    </select>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="well">
+                    <h5>Movies:</h5>
+                    <select id="selMovie" onchange="displayCurrentMovieData();"></select>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Selected Movie Info</h3>
+          </div>
+          <div id="movie-display" class="panel-body"> 
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Random Entertainment</h3>
+          </div>
+          <div id="you-tube" class="panel-body"> 
+            <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <h1 id = "ThankYouMessage">Thank you for searching with us, use the links below to watch your movie. </h1>
+    <div id = "platform_row">
+      <div class = "col-md-4">
+        <a href = "https://www.netflix.com">
+          <img id= "netflix_image" src="https://i.insider.com/5beafd0f48eb12015655cf72?width=1067&format=jpeg" alt="..." >
+          </a>
+      </div>
+      <div class = "col-md-4">
+        <a href = "https://www.hulu.com/welcome">
+          <img id= "hulu_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png" alt="..." >
+          </a>
+      </div>
+      <div class = "col-md-4">
+        <a href = "https://www.primevideo.com/">
+          <img id= "prime_image" src="https://miro.medium.com/max/5108/1*k1OZBUe6f8pzEbjlYfYZ9A.png" alt="..." >
+          </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="../static/js/searchapp.js"></script>
+
+
+
+</body>
+
+</html>

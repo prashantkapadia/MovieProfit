@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="../static/css/tab-viz.css">
+</head>
+<body>
+
+<div class="navbar">
+  <a href="backhome">Movie Dashboard</a>
+  <a href="/search">Movie Search</a>  
+ 
+</div>
+
+<div class='tableauPlaceholder' id='viz1608345276087' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;MovieTableau_16081766096740&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MovieTableau_16081766096740&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;MovieTableau_16081766096740&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1608345276087');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<br>
+
+
+
+<br>
+  
+</div>
+
+<div>
+  <h3>We split our data into "Training Data" and "Testing Data". </h3>
+  
+  <img style="width: 600px;" src='static/images/Training-Testing.png'>
+</div>
+<div>
+  <h3>This graph shows the impact that each feature has on the profitability of a movie</h3>
+ 
+  <img style="width: 600px;" src="static/images/importance.png" >
+</div>
+<br>
+
+<div>
+  <h3>This graph shows the Predicted Vs. Actual Profit for each of the movies in testing data </h3>
+ 
+  <img style="width: 600px;" src="static/images/Accuracy.png" >
+</div>
+<br>
+<br>
+<div class="row">
+  <h3 style="color:white" class="center">Machine Learning Interactive Profit Predictor</h3>
+  <p style="color:white">Please enter target values for your movie in order to have our model predict the profit that you will make.</p>
+
+  <br>
+
+  <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="duration" placeholder="Duration (minutes)" required="required" class="center"/>
+    <br>
+      <input type="text" name="critic_reviews" placeholder="# of Critic Reviews" required="required" class="center"/>
+      <br>
+  <input type="text" name="ave_vote" placeholder="Average Vote (1-10)" required="required" class="center"/>
+  <br>
+  <input type="text" name="votes" placeholder="# of Votes" required="required" class="center"/>
+  <br>
+  <select name = "movie" class="center">
+  <option value ="Action">Action</option>
+  <option value="Adventure">Adventure</option>
+  <option value="Animation">Animation</option>
+  <option value="Biography">Biography</option>
+  <option value="Comedy">Comedy</option>
+  <option value="Crime">Crime</option>
+  <option value="Drama">Drama</option>
+  <option value="Family">Family</option>
+  <option value="Fantasy">Fantasy</option>
+  <option value="Horror">Horror</option>
+  <option value="Music">Music</option>
+  <option value="Musical">Musical</option>
+  <option value="Mystery">Mystery</option>
+  <option value="Romance">Romance</option>
+  <option value="Sci-Fi">Sci-Fi</option>
+  <option value="Sport">Sport</option>
+  <option value="Thriller">Thriller</option>
+  <option value="Western">Western</option>
+</select>
+<br>
+  <button type="submit" class="center">Predict</button>
+  </form>
+
+ <br>
+ <br>
+ 
+ <p style="color:white" class="center">
+ {{ prediction_text }}
+</p>
+ <br>
+ <br> 
+</div>
+ 
+</body>
+</html>
