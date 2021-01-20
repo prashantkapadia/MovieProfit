@@ -1,20 +1,20 @@
-# FinalProject
+# Movie Profitability Project
 
-Landing Page: Dashboard with graphs/charts about movie data.
-	* Some graphs and charts from Project 2 
-	* Graphs in Tableau that illustrate trends
-		* We should see a positive correlation in duration and budget
-	* Machine learning will predict:
-		* The most profitable genres in the future from genre vs. Income-
-		* Avg. Rating 
-Movie search page with search bar that will give all relevant items as a list of banners to choose from.
-	* Once a single movie is selected, it will display data from omdb api
-To do list 
+This is a amazing project to view full stack developement to show different sides of movie or entertainment business.
 
-1 - Landing Page 
-	- Rename existing index html file to different 
-	- Tab visualization, ML (Ashley)
-	- Dropdown list for ML (Mohd,prash)
+Landing page is to show different combination of possibility of movie rating and profitibilities in Bar Charts,Bubble Charts.
+User can search for movies based on their criteria...such as Age,Genre..etc.
+User can navigage easily from bootstrap/CSS modern Menu.
+User can watch youtube link Video.
+We also linked our Tableau Public creation to observe Movies Profit by Genre,Release year released. 
+Last but the least we added Machine Learnings to predict by adding user criterias to find if it is profitable or not.
+
+
+
+
+
+
+
 	
 
 	- 
